@@ -1,0 +1,117 @@
+[gd_scene load_steps=19 format=3 uid="uid://sfgu8dkt38v1"]
+
+[ext_resource type="Texture2D" uid="uid://b5jis62ptnrnt" path="res://art/Nuke_stuff/nuke3.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://co2cvthrhp1lu" path="res://art/Nuke_stuff/nuke2.png" id="2"]
+[ext_resource type="Script" path="res://Nuke.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://6fr275w8mjxx" path="res://art/Nuke_stuff/nuke_explosion6.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://bgde06dy2y8rc" path="res://sounds/missle_sound.wav" id="5"]
+[ext_resource type="AudioStream" uid="uid://bsjpsy5qswkl3" path="res://sounds/nuke_blast.wav" id="6"]
+[ext_resource type="Texture2D" uid="uid://bupb1wdjp5i1k" path="res://art/Nuke_stuff/nuke_explosion2.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://et0x54gnhawn" path="res://art/Nuke_stuff/nuke_explosion3.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://r8ma5bqmpfds" path="res://art/Nuke_stuff/nuke_explosion4.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://6hpdi7c80qyg" path="res://art/Nuke_stuff/nuke_explosion5.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bd7uncdojan8o" path="res://art/Nuke_stuff/nuke_explosion7.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dire1ggkxtnau" path="res://art/Nuke_stuff/nuke_explosion8.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://eg5v7p82uj4x" path="res://art/Nuke_stuff/nuke_explosion1.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://bhfhgomt8ls1o" path="res://art/Nuke_stuff/nuke_explosion9.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://ckqevhvg3bd4r" path="res://art/Nuke_stuff/nuke_explosion10.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://bfox68jsxw4xs" path="res://art/explosion.png" id="16"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Nuke" type="Node2D"]
+script = ExtResource("3")
+
+[node name="Missile" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.12, 0.12)
+sprite_frames = SubResource("1")
+frame = 1
+
+[node name="Explosion" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.53732, 1.95123)
+sprite_frames = SubResource("2")
+
+[node name="Missile_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5")
+volume_db = 6.0
+
+[node name="Nuke_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6")
+volume_db = 1.0

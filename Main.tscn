@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmwce2kynm5nk"]
+
+[ext_resource type="PackedScene" uid="uid://b2hrw3165unwy" path="res://Background.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://i7bsnc6jv87" path="res://HUD.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://Player.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bf4axhyj4lq2q" path="res://Controls.tscn" id="4"]
+[ext_resource type="Script" path="res://Main.gd" id="5"]
+[ext_resource type="AudioStream" uid="uid://dnx66fbjcrt4q" path="res://sounds/background.wav" id="6"]
+[ext_resource type="AudioStream" uid="uid://dtu4viauvxar3" path="res://sounds/explosion2.wav" id="7"]
+[ext_resource type="AudioStream" uid="uid://cctgs3gjyhf34" path="res://sounds/lose.wav" id="9"]
+[ext_resource type="PackedScene" path="res://SplashScreen.tscn" id="10"]
+
+[node name="Node" type="Node"]
+script = ExtResource("5")
+
+[node name="Background" parent="." instance=ExtResource("1")]
+
+[node name="Controls" parent="." instance=ExtResource("4")]
+
+[node name="Player" parent="." instance=ExtResource("3")]
+
+[node name="HUD" parent="." instance=ExtResource("2")]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
+pitch_scale = 0.5
+
+[node name="Explosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7")
+
+[node name="Game Over" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9")
+pitch_scale = 0.5
+
+[node name="SplashScreen" parent="." instance=ExtResource("10")]
+position = Vector2(572, 330.03)
+scale = Vector2(1.16, 1.16)
+
+[connection signal="nuke" from="Controls" to="." method="on_nuke"]
+[connection signal="nuke_ad" from="Controls" to="." method="_on_Controls_nuke_ad"]
+[connection signal="shield" from="Controls" to="." method="on_shield"]
+[connection signal="shield_ad" from="Controls" to="." method="_on_Controls_shield_ad"]
+[connection signal="shoot" from="Controls" to="." method="on_shoot"]
+[connection signal="area_entered" from="Player" to="." method="_on_Player_area_entered"]
+[connection signal="exit_help" from="HUD" to="." method="_on_HUD_exit_help"]
+[connection signal="help_pressed" from="HUD" to="." method="_on_HUD_help_pressed"]
+[connection signal="paused" from="HUD" to="." method="_on_HUD_paused"]
+[connection signal="resume" from="HUD" to="." method="_on_HUD_resume"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]

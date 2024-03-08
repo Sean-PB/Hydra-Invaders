@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SplashScreen.gd" type="Script" id=1]
+[ext_resource path="res://art/splash.png" type="Texture2D" id=2]
+
+[node name="SplashScreen" type="Sprite2D"]
+visible = false
+position = Vector2( 510, 299 )
+scale = Vector2( 1.03, 1.03 )
+z_index = 2
+texture = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.5
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

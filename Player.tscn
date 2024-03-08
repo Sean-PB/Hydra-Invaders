@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://art/Player_sprites/player_red.png" type="Texture2D" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://art/explosion.png" type="Texture2D" id=3]
+[ext_resource path="res://art/Player_sprites/player_blue.png" type="Texture2D" id=4]
+[ext_resource path="res://art/Player_sprites/player_green.png" type="Texture2D" id=5]
+[ext_resource path="res://art/Player_sprites/player_yellow.png" type="Texture2D" id=6]
+[ext_resource path="res://art/Player_sprites/player_pink.png" type="Texture2D" id=7]
+[ext_resource path="res://art/Player_sprites/player_black.png" type="Texture2D" id=8]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Pink",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": false,
+"name": "Red",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Blue",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Green",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Yellow",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Black",
+"speed": 5.0
+} ]
+
+[node name="Player" type="Area2D"]
+collision_layer = 0
+collision_mask = 2147483650
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 1 )
+animation = "Red"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.75, 0.75 )
+polygon = PackedVector2Array( -7.40494, 38.4851, 8.0115, 38.6252, 14.4584, 29.0951, 46.4124, 25.5913, 49.9162, -4.54079, 44.7306, -5.10139, 36.4618, 1.20533, 13.8978, -11.6884, 8.99254, -36.9153, -7.68524, -36.635, -11.3291, -11.6884, -35.1545, 1.76593, -43.4233, -5.94229, -48.3286, -5.24154, -45.5256, 25.1709, -13.5715, 28.3943 )

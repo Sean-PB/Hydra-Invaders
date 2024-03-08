@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://art/explosion.png" type="Texture2D" id=1]
+[ext_resource path="res://art/enemyBlack3.png" type="Texture2D" id=2]
+[ext_resource path="res://Enemy.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Enemy" type="Area2D" groups=[
+"enemies",
+]]
+scale = Vector2( 0.75, 0.75 )
+collision_layer = 2
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2( 0.75, 0.75 )
+frames = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.75, 0.75 )
+polygon = PackedVector2Array( -9.26978, 33.4649, 9.25375, 33.5829, 13.1472, 23.9082, 29.0751, 28.6276, 27.7773, 40.072, 38.6318, 41.9598, 52.672, -2.28432, 26.2435, -36.1458, 17.3947, -36.2638, 9.13577, -41.927, -8.20792, -42.045, -16.3488, -36.3818, -25.0797, -36.3818, -52.0981, -1.81239, -38.1759, 42.9037, -28.0293, 39.0102, -30.271, 29.8074, -12.3374, 22.9643 )
+
+[node name="ShootTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ShootTimer2" type="Timer" parent="."]
+[connection signal="area_entered" from="." to="." method="_on_Enemy_area_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]
+[connection signal="timeout" from="ShootTimer2" to="." method="_on_ShootTimer2_timeout"]

@@ -1,0 +1,431 @@
+[gd_scene load_steps=22 format=3 uid="uid://i7bsnc6jv87"]
+
+[ext_resource type="FontFile" uid="uid://dqfykca53yh0h" path="res://art/Fonts/Milletun.otf" id="1"]
+[ext_resource type="Texture2D" uid="uid://c6u3y5y4ghgrx" path="res://art/Player_sprites/player_red.png" id="2"]
+[ext_resource type="Script" path="res://HUD.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://c0i6vh4ya6bo1" path="res://art/Buttons/pause.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dh127hf7g41n4" path="res://art/Buttons/play.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://b5bgweaupfgop" path="res://art/laser.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://tlsnm7av8sq1" path="res://art/Player_sprites/player_blue.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dkevwwrqt8umc" path="res://art/Player_sprites/player_green.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cp2y7a2k1qv8j" path="res://art/Player_sprites/player_yellow.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://clxok8qn0cap5" path="res://art/Player_sprites/player_pink.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dq5lgb5n10igh" path="res://art/Player_sprites/player_black.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cxrdswqdtt8dy" path="res://art/help_sprite.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://g7isrpg1c1f4" path="res://art/Buttons/mute.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://crpg7eu2bop03" path="res://art/Buttons/sound.png" id="14"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/64/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/64/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+cache/0/12/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/12/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/12/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="3"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/64/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/64/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="4"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/96/0 = Vector2(0, 0)
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/64/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/96/0 = Vector2(0, 0)
+cache/0/96/0/ascent = 0.0
+cache/0/96/0/descent = 0.0
+cache/0/96/0/underline_position = 0.0
+cache/0/96/0/underline_thickness = 0.0
+cache/0/96/0/scale = 1.0
+cache/0/96/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/96/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/96/0/kerning_overrides/96/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="5"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/42/0 = Vector2(0, 0)
+cache/0/42/0/ascent = 0.0
+cache/0/42/0/descent = 0.0
+cache/0/42/0/underline_position = 0.0
+cache/0/42/0/underline_thickness = 0.0
+cache/0/42/0/scale = 1.0
+cache/0/42/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/42/0/kerning_overrides/42/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="6"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/64/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/64/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="7"]
+fallbacks = Array[Font]([ExtResource("1"), ExtResource("1")])
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/64/0/ascent = 0.0
+cache/0/64/0/descent = 0.0
+cache/0/64/0/underline_position = 0.0
+cache/0/64/0/underline_thickness = 0.0
+cache/0/64/0/scale = 1.0
+cache/0/64/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/64/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/64/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("3")
+
+[node name="Score" type="Label" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1024.0
+offset_top = 8.0
+offset_right = -16.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 2
+
+[node name="HighScore" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.000976563
+anchor_top = 0.476667
+anchor_right = 1.00098
+anchor_bottom = 0.483333
+offset_left = -1.125
+offset_top = -28.8802
+offset_right = 0.875
+offset_bottom = 31.1198
+theme_override_colors/font_shadow_color = Color(0, 0.694118, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("2")
+theme_override_font_sizes/font_size = 32
+text = "High Score: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_top = 0.376667
+anchor_right = 1.0
+anchor_bottom = 0.376667
+offset_top = -34.0
+offset_bottom = 34.0
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("3")
+theme_override_font_sizes/font_size = 64
+text = "Hydra Invaders"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = -0.000369132
+anchor_top = 0.648148
+anchor_right = 0.999631
+anchor_bottom = 0.659667
+offset_left = 416.425
+offset_top = -35.9999
+offset_right = -415.575
+offset_bottom = 32.5358
+theme_override_fonts/font = SubResource("4")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="SelectPlayerColor" type="Button" parent="StartButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.227
+anchor_top = 1.884
+anchor_right = 3.27
+anchor_bottom = 1.884
+offset_left = 651.64
+offset_top = -38.184
+offset_right = -662.4
+offset_bottom = 18.816
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 42
+text = "Select Player Color"
+
+[node name="Pause" type="TouchScreenButton" parent="."]
+position = Vector2(24, 24)
+scale = Vector2(1.5, 1.5)
+texture_normal = ExtResource("4")
+
+[node name="Resume" type="TouchScreenButton" parent="."]
+process_mode = 3
+position = Vector2(512, 320)
+texture_normal = ExtResource("5")
+
+[node name="Mute" type="TouchScreenButton" parent="."]
+process_mode = 3
+visible = false
+position = Vector2(32, 552)
+scale = Vector2(0.355556, 0.355556)
+texture_normal = ExtResource("14")
+
+[node name="Sound" type="TouchScreenButton" parent="."]
+process_mode = 3
+visible = false
+position = Vector2(32, 552)
+texture_normal = ExtResource("13")
+
+[node name="LaserRechargeBar" type="ProgressBar" parent="."]
+anchors_preset = -1
+anchor_top = 0.958
+anchor_bottom = 0.958
+offset_left = 151.691
+offset_top = -12.9748
+offset_right = 312.691
+offset_bottom = 9.02521
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+max_value = 5.0
+show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="LaserRechargeBar"]
+layout_mode = 0
+anchor_left = -0.865
+anchor_top = 0.5
+anchor_right = -0.865
+anchor_bottom = 0.5
+offset_left = 141.265
+offset_top = -9.0
+offset_right = 298.265
+offset_bottom = 9.0
+nine_patch_stretch = true
+texture_progress = ExtResource("6")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="RechargeTimer" type="Timer" parent="LaserRechargeBar"]
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="PlayerSkinSelector" type="ScrollContainer" parent="."]
+anchors_preset = -1
+anchor_top = 0.847
+anchor_right = 1.0
+anchor_bottom = 0.847
+offset_left = 64.0
+offset_top = -36.856
+offset_right = -64.0
+offset_bottom = 25.144
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerSkinSelector"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Red" type="TouchScreenButton" parent="PlayerSkinSelector/HBoxContainer"]
+position = Vector2(80, 0)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("2")
+
+[node name="Blue" type="TouchScreenButton" parent="PlayerSkinSelector/HBoxContainer"]
+position = Vector2(392, 0)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("7")
+
+[node name="Green" type="TouchScreenButton" parent="PlayerSkinSelector/HBoxContainer"]
+position = Vector2(712, 0)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("8")
+
+[node name="Yellow" type="TouchScreenButton" parent="PlayerSkinSelector/HBoxContainer"]
+position = Vector2(872, 0)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("9")
+
+[node name="Pink" type="TouchScreenButton" parent="PlayerSkinSelector/HBoxContainer"]
+position = Vector2(552, 0)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("10")
+
+[node name="Black" type="TouchScreenButton" parent="PlayerSkinSelector/HBoxContainer"]
+position = Vector2(240, 0)
+scale = Vector2(0.75, 0.75)
+texture_normal = ExtResource("11")
+
+[node name="Help" type="Button" parent="."]
+process_mode = 3
+visible = false
+offset_left = 1016.0
+offset_top = 560.0
+offset_right = 1120.0
+offset_bottom = 616.0
+theme_override_fonts/font = SubResource("6")
+theme_override_font_sizes/font_size = 32
+text = "Help"
+
+[node name="Sprite2D" type="Sprite2D" parent="Help"]
+position = Vector2(-441.625, -236.5)
+scale = Vector2(1.13149, 1.08893)
+texture = ExtResource("12")
+
+[node name="ExitHelp" type="Button" parent="Help"]
+layout_mode = 0
+offset_left = -520.0
+offset_top = -280.0
+offset_right = -360.0
+offset_bottom = -224.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("7")
+theme_override_font_sizes/font_size = 32
+text = "Exit Help"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="StartButton/SelectPlayerColor" to="." method="_on_SelectPlayerColor_pressed"]
+[connection signal="pressed" from="Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Mute" to="." method="_on_Mute_pressed"]
+[connection signal="pressed" from="Sound" to="." method="_on_sound_pressed"]
+[connection signal="timeout" from="LaserRechargeBar/RechargeTimer" to="." method="_on_RechargeTimer_timeout"]
+[connection signal="released" from="PlayerSkinSelector/HBoxContainer/Red" to="." method="_on_Red_released"]
+[connection signal="released" from="PlayerSkinSelector/HBoxContainer/Blue" to="." method="_on_Blue_released"]
+[connection signal="released" from="PlayerSkinSelector/HBoxContainer/Green" to="." method="_on_Green_released"]
+[connection signal="released" from="PlayerSkinSelector/HBoxContainer/Yellow" to="." method="_on_Yellow_released"]
+[connection signal="released" from="PlayerSkinSelector/HBoxContainer/Pink" to="." method="_on_Pink_released"]
+[connection signal="released" from="PlayerSkinSelector/HBoxContainer/Black" to="." method="_on_Black_released"]
+[connection signal="pressed" from="Help" to="." method="_on_Help_pressed"]
+[connection signal="pressed" from="Help/ExitHelp" to="." method="_on_ExitHelp_pressed"]

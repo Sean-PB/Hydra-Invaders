@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://art/enemy_laser.png" type="Texture2D" id=1]
+[ext_resource path="res://EnemyLaser.gd" type="Script" id=2]
+[ext_resource path="res://sounds/laser.wav" type="AudioStream" id=3]
+[ext_resource path="res://art/enemy_laser_explosion.png" type="Texture2D" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ) ],
+"loop": false,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1, 10 )
+
+[node name="EnemyLaser" type="Area2D"]
+scale = Vector2( 2, 1 )
+collision_layer = 2147483650
+collision_mask = 0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2( 0.0371628, 0 )
+scale = Vector2( 0.100662, 1 )
+
+[node name="LaserSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="LaserForceFieldSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+pitch_scale = 3.0
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite_animation_finished"]
