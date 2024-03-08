@@ -13,3 +13,8 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Important files to not be shared publicly
+*.apk
+*.keystore
+*.aab
